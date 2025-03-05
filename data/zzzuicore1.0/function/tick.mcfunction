@@ -1,0 +1,1 @@
+execute as @a[scores={uicore.id=1..}] at @s run function zzzuicore1.0:player/tick_player
