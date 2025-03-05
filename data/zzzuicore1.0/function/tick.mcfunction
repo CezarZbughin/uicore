@@ -1,1 +1,1 @@
-execute as @a[scores={uicore1.0.id=1..}] at @s run function zzzuicore1.0:player/tick_player
+execute as @a[scores={uicore.id=1..}] at @s run function zzzuicore1.0:player/tick_player
