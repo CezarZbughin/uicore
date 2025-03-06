@@ -66,3 +66,8 @@ mc:uicore_namepace_repo
 	}
 }
 
+
+# redesign
+- open_window(player, window_id)
+- goto_screen(player, window_id, namespace, screen_id)
+- close_window(window_id)
