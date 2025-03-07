@@ -1,3 +1,13 @@
+# design
+- open_window(player, window_id)
+- goto_screen(player, window_id, namespace, screen_id)
+- close_window(window_id)
+
+- window_data_get(player, window_id, path)
+- window_data_set(player, window_id, path)
+
+
+
 # features
 - **save screen**  -> save_screen(namespace,screen,layout)
 	- transforme data and store
@@ -8,10 +18,6 @@
 		- the result of the complie should make loading efficient, we dont want to do a lot of transformations online
 
 - **load screen** -> load_screen(namespace, screen)
-
-
-- **screen**
-icon click detection
 
 # questions
  - screen compilation on reload / lazy compile
@@ -26,48 +32,39 @@ icon click detection
 	- on players -> then why ui entities are a thing anymore
 	- on ui entityes -> the how does the user know which entity is which
 
-# design
-open_ui(player, namespace, screen, isTransactional)
+# sandbox
 
-in layout : 
-custom_data : {
-    uicore : {
-        icon_id : "home"
-    }
+{
+	custom_data : {
+		uicore : {
+			icon_id : "home"
+		}
+	}
 }
 
 
-mc:uicore_namepace_repo
 {
     screen0 : {
         layout : [{custom_data:{uicore:{icon_id:"home"}}}]
     }
 }
 
+
 {
 	data: {
 		uicore: {
-			isTransactional: 0,
+			window_id : "window_id"
 			namespace: "game.ui",
-			screen: "screen0",
+			screen_id: "screen0",
 			layout: [
 				{
 					custom_data: {
 						uicore: {
 							icon_id: "home"
-						},
-						uicoremeta: {
-                            hasOnClick : 1
-                        }
+						}
 					}
 				}
 			]
 		}
 	}
 }
-
-
-# redesign
-- open_window(player, window_id)
-- goto_screen(player, window_id, namespace, screen_id)
-- close_window(window_id)
