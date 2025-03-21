@@ -12,7 +12,6 @@
 #
 
 #initialize output 
-data modify storage uicore:api/v1/open_window io merge value {current_window_id:"undefined"}
 data remove storage uicore:api/v1/open_window io.exception
 
 #validate executor
@@ -48,5 +47,7 @@ summon minecraft:item_display ~ ~ ~ { \
 data modify storage uicore:zprivate/v1/open_window/init_window io set value {transaction:false}
 execute as @e[tag=uicore.new, limit=1] run function uicore:zprivate/v1/open_window/init_window
 
-#finally xxxxxxx
+#finally
 tag @e remove uicore.selected.window
+
+return 1
