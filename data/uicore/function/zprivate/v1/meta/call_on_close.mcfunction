@@ -1,0 +1,1 @@
+$function $(namespace):$(screen_id)/on_close
