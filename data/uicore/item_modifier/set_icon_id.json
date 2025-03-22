@@ -2,13 +2,13 @@
     "function": "minecraft:copy_custom_data",
     "source": {
       "type": "minecraft:storage",
-      "source": "TODO"
+      "source": "uicore:api/v1/set_icon_id"
     },
     "ops": [
       {
         "op": "replace",
-        "source": "TODO",
-        "target": "TODO"
+        "source": "macro.icon_id",
+        "target": "uicore.icon_id"
       }
     ]
   }
