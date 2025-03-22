@@ -1,0 +1,3 @@
+$execute as @n[type=minecraft:chest_minecart] run data modify storage uicore.$(namespace):screens $(screen_id).layout set from entity @s Items
+$data modify storage uicore.$(namespace):screens $(screen_id).layout[].components."minecraft:custom_data".uicore.namespace set value "$(namespace)"
+$data modify storage uicore.$(namespace):screens $(screen_id).layout[].components."minecraft:custom_data".uicore.screen_id set value "$(screen_id)"
