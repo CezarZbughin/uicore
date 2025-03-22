@@ -1,7 +1,6 @@
 #
 #
 #
-say cac
 scoreboard players operation @s uicore.id = $new_id uicore.id
 execute on passengers run scoreboard players operation @s uicore.id = $new_id uicore.id
 execute on passengers on passengers run scoreboard players operation @s uicore.id = $new_id uicore.id
