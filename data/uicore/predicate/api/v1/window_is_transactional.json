@@ -1,0 +1,14 @@
+{
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "nbt": "{Tags:[\"uicore.window\",\"uicore.v1\"]}",
+      "passenger": {
+        "passenger": {
+          "passenger": {
+            "nbt": "{data:{uicore:{transaction:1b}}}"
+          }
+        }
+      }
+    }
+  }

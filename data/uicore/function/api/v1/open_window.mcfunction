@@ -12,14 +12,15 @@
 #
 
 #initialize output 
-data remove storage uicore:api/v1/open_window io.exception
+data remove storage uicore:thrown exception
 
 #validate executor
-execute if entity @s[type=!player] run return run function uicore:zprivate/v1/open_window/throw_not_player
+execute if entity @s[type=!player] run return run function uicore:zprivate/v1/throw/invalid_executor
 
 function uicore:zprivate/v1/player/find_window
 
-execute if function uicore:zprivate/v1/open_window/has_transaction_opened run return run function uicore:zprivate/v1/open_window/throw_transaction_in_progress
+execute if entity @e[tag=uicore.selected.window, predicate=uicore:api/v1/window_is_transactional, limit=1] run \
+	return run function uicore:zprivate/v1/throw/transaction_in_progress
 
 #close the window that is currently opened
 function uicore:zprivate/v1/player/force_close_window
@@ -46,8 +47,5 @@ summon minecraft:item_display ~ ~ ~ { \
 
 data modify storage uicore:zprivate/v1/open_window/init_window io set value {transaction:false}
 execute as @e[tag=uicore.new, limit=1] run function uicore:zprivate/v1/open_window/init_window
-
-#finally
-tag @e remove uicore.selected.window
 
 return 1
