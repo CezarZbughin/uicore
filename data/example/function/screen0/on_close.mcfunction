@@ -1,0 +1,1 @@
+say close example:screen0

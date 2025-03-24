@@ -1,0 +1,1 @@
+say init example:screen0

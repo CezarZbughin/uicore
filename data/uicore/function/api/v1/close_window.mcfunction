@@ -20,14 +20,14 @@ execute if entity @s[type=!player] run return run function uicore:zprivate/v1/th
 execute unless function uicore:zprivate/v1/player/find_window run return run function uicore:zprivate/v1/throw/no_active_window
 
 #check window id matches the id of the current window
-data modify storage uicore:tmp current_window_id set from storage uicore:api/v1/close_window io.window_id
+data modify storage uicore:zprivate/v1/throw/window_id_mismatch current_window_id set from storage uicore:api/v1/close_window io.window_id
 data modify storage uicore:tmp different_window_id set value 0b
 execute as @e[tag=uicore.selected.window] \
     on passengers \
         on passengers \
             on passengers \
                 store success storage uicore:tmp different_window_id byte 1 \
-                    run data modify storage uicore:tmp current_window_id set from entity @s data.uicore.window_id
+                    run data modify storage uicore:zprivate/v1/throw/window_id_mismatch current_window_id set from entity @s data.uicore.window_id
 
 execute if data storage uicore:tmp {different_window_id:1b} run return run function uicore:zprivate/v1/throw/window_id_mismatch
 

@@ -14,5 +14,5 @@ execute if data storage uicore:tmp {success_fetch_screen:0b} run return run func
 #add id to all items
 execute store result entity @s Items[].components."minecraft:custom_data".uicore.player_id int 1 run scoreboard players get @s uicore.id
 
-$execute on passengers run data modify entity @s data.uicore merge value {namespace:$(namespace), screen:$(screen_id)}
+$execute on passengers run data modify entity @s data.uicore merge value {namespace:$(namespace), screen_id:$(screen_id)}
 return 1

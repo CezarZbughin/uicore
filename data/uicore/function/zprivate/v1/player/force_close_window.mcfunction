@@ -8,7 +8,11 @@
 
 execute unless entity @e[tag=uicore.selected.window, limit=1] run return fail
 
-execute as @e[tag=uicore.selected.window, limit=1] on passengers on passengers on passengers run data modify storage uicore:zprivate/v1/meta/call_on_close macro set from entity @s data.uicore
+execute as @e[tag=uicore.selected.window, limit=1] \
+    on passengers \
+        on passengers \
+            on passengers run \
+                data modify storage uicore:zprivate/v1/meta/call_on_close macro set from entity @s data.uicore
 
 function uicore:zprivate/v1/meta/call_on_close with storage uicore:zprivate/v1/meta/call_on_close macro
 
